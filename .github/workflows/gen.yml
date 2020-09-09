@@ -1,0 +1,25 @@
+name: generate scripts
+on:
+  push:
+    branches: [master]
+    paths:
+    - README.md
+
+jobs:
+  build:
+    timeout-minutes: 5
+    name: generate scripts
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: checkout
+      uses: actions/checkout@v2
+    - 
+      name: install shells
+      run: |
+        sudo apt-get update 
+        sudo apt-get install -y install sh bash zsh
+    - 
+      name: generate
+      run: |
+        ./.github/scripts/gen.zsh
