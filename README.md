@@ -84,9 +84,9 @@ compdef k='kubectl' # completion
 A variation of this has always existed in my `.zshrc`. Originally titled "k.sh".
 
 kubectx, a popular utility that serves a *similar* function, is a choice between
-a ~250 line shell script, or a compiled Go binary.
+a ~250 line shell script or a compiled Go binary.
 
-k.env is about a dozen lines.
+k.env is about a dozen lines of POSIX.
 
 Simple is better.
 
