@@ -16,9 +16,6 @@ Add this snippet (minus the shebang) to your `.bashrc`, `.zshrc`, or other
 POSIX environment files. *You should really only use this if you're using a
 true POSIX shell. Otherwise use the Zsh or Bash snippets below.*
 
-<details><summary>k.sh</summary>
-<p>
-
 ```sh
 #!/bin/sh
 
@@ -33,9 +30,6 @@ k() {
   fi
 }
 ```
-
-</p>
-</details>
 
 ### Bash
 
