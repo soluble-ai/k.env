@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # kubectl wrapper to switch KUBECONFIG environments.
 k() {
@@ -10,3 +10,4 @@ k() {
     kubectl "${@}"
   fi
 }
+compdef k='kubectl' # completion

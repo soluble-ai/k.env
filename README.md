@@ -10,6 +10,15 @@ Using the format `k prod`, or in a command as `k prod get pods`, the
 
 ## Source
 
+### POSIX
+
+Add this snippet (minus the shebang) to your `.bashrc`, `.zshrc`, or other
+POSIX environment files. *You should really only use this if you're using a
+true POSIX shell. Otherwise use the Zsh or Bash snippets below.*
+
+<details><summary>k.sh</summary>
+<p>
+
 ```sh
 #!/bin/sh
 
@@ -25,11 +34,64 @@ k() {
 }
 ```
 
-## Completion
+</p>
+</details>
 
-Assuming you use Bash or Zsh and would like to retain shell completion, use:
+### Bash
 
-`compdef k='kubectl'`
+Add this snippet (minus the shebang) to your `.bashrc` or other sourced files.
+**Includes completion for kubectl.**
+
+<details><summary>k.bash</summary>
+<p>
+
+```bash
+#!/bin/bash
+
+# kubectl wrapper to switch KUBECONFIG environments.
+k() {
+  if [[ "${1}" == 'yourenv' ]]; then
+    KUBECONFIG="${HOME}/.kube/configs/yourenv"
+    shift
+    kubectl "${@}"
+  else
+    kubectl "${@}"
+  fi
+}
+compdef k='kubectl' # completion
+```
+
+</p>
+</details>
+
+### ZSH
+
+Add this snippet (minus the shebang) to your `.zshrc` or other sourced files.
+**Includes completion for kubectl.**
+
+<details><summary>k.zsh</summary>
+<p>
+
+#### k.zsh
+
+```zsh
+#!/bin/zsh
+
+# kubectl wrapper to switch KUBECONFIG environments.
+k() {
+  if [[ "${1}" == 'yourenv' ]]; then
+    KUBECONFIG="${HOME}/.kube/configs/yourenv"
+    shift
+    kubectl "${@}"
+  else
+    kubectl "${@}"
+  fi
+}
+compdef k='kubectl' # completion
+```
+
+</p>
+</details>
 
 ## About
 
