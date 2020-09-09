@@ -4,6 +4,7 @@ on:
     branches: [master]
     paths:
     - README.md
+    - .github/workflows/gen.yml
 
 jobs:
   build:
