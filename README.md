@@ -25,6 +25,12 @@ k() {
 }
 ```
 
+## Completion
+
+Assuming you use Bash or Zsh and would like to retain shell completion, use:
+
+`compdef k='kubectl'`
+
 ## About
 
 A variation of this has always existed in my `.zshrc`.
