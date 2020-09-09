@@ -1,11 +1,12 @@
 #!/bin/sh
 
+# kubectl wrapper and alias, switching on environments
 k() {
-  if [[ ${1} == 'yourenv' ]]; then
-    KUBECONFIG=${HOME}/.kube/configs/yourenv
+  if [[ "${1}" == 'yourenv' ]]; then
+    KUBECONFIG="${HOME}/.kube/configs/yourenv"
     shift
-    kubectl ${@}
+    kubectl "${@}"
   else
-    kubectl ${@}
+    kubectl "${@}"
   fi
 }

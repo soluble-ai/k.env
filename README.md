@@ -1,20 +1,26 @@
 # k.sh
 
-An elegant implementation of kubectl "contexts" using KUBECONFIG,
+> "K dot SH"
+
+An elegant implementation of `kubectl` "contexts" using `KUBECONFIG`,
 all wrapped in a convenient and easy to understand POSIX shell function.
+
+Using the format `k prod`, or in a command as `k prod get pods`, the
+`KUBECONFIG` "context" is set for the remainder of that terminal session.
 
 ## Source
 
 ```sh
 #!/bin/sh
 
+# kubectl wrapper and alias, switching on environments
 k() {
-  if [[ ${1} == 'yourenv' ]]; then
-    KUBECONFIG=${HOME}/.kube/configs/yourenv
+  if [[ "${1}" == 'yourenv' ]]; then
+    KUBECONFIG="${HOME}/.kube/configs/yourenv"
     shift
-    kubectl ${@}
+    kubectl "${@}"
   else
-    kubectl ${@}
+    kubectl "${@}"
   fi
 }
 ```
