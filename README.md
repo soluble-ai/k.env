@@ -13,7 +13,7 @@ Using the format `k prod`, or in a command as `k prod get pods`, the
 ```sh
 #!/bin/sh
 
-# kubectl wrapper and alias, switching on environments
+# kubectl wrapper to switch KUBECONFIG environments.
 k() {
   if [[ "${1}" == 'yourenv' ]]; then
     KUBECONFIG="${HOME}/.kube/configs/yourenv"
@@ -35,4 +35,5 @@ Assuming you use Bash or Zsh and would like to retain shell completion, use:
 
 A variation of this has always existed in my `.zshrc`.
 
-Inspired by [@ibuildthecloud's tweet](https://twitter.com/ibuildthecloud/status/1303329978088484869).
+Inspired by [@ibuildthecloud's tweet](https://twitter.com/ibuildthecloud/status/1303329978088484869),
+built by Matt at [Soluble.ai](https://www.soluble.ai).
