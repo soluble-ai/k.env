@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # kubectl wrapper to switch KUBECONFIG environments.
 k() {
   if [[ "${1}" == 'yourenv' ]]; then

@@ -30,7 +30,6 @@ k() {
 ### Bash
 
 Add this snippet to your `.bashrc` or other sourced files.
-**Includes completion for kubectl.**
 
 <details><summary>k.bash</summary>
 <p>
@@ -46,7 +45,6 @@ k() {
     kubectl "${@}"
   fi
 }
-compdef k='kubectl' # completion
 ```
 
 </p>
